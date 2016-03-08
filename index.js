@@ -40,15 +40,15 @@ Plugin.prototype.apply = function(compiler) {
     });
 
     compiler.plugin('done', function(stats){
-      if (stats.compilation.errors.length > 0) {
-        var error = stats.compilation.errors[0];
-        self.writeOutput(compiler, {
-          status: 'error',
-          error: error['name'],
-          message: stripAnsi(error['message'])
-        });
-        return;
-      }
+      // if (stats.compilation.errors.length > 0) {
+      //   var error = stats.compilation.errors[0];
+      //   self.writeOutput(compiler, {
+      //     status: 'error',
+      //     error: error['name'],
+      //     message: stripAnsi(error['message'])
+      //   });
+      //   return;
+      // }
 
       var chunks = {};
       stats.compilation.chunks.map(function(chunk){
